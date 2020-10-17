@@ -7,17 +7,17 @@ class Left extends Component {
     return (
       <div className="left-container">
         <div className="list">
-          {dataList.map(
-            (data, index) => (
-              (<h4>{data.Country}</h4>),
-              data.Names.map(
-                (name, index) => (
-                  (<input type="checkbox" name={name} value={name} />),
-                  (<label htmlFor={name}>{name}</label>)
-                )
-              )
-            )
-          )}
+          {dataList.map((data, index) => (
+            <div>
+              <h4>{data.Country}</h4>
+              {data.Names.map((name, index) => (
+                <div>
+                  <input type="checkbox" value={name} />
+                  <label htmlFor={name}>{name}</label>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     );
